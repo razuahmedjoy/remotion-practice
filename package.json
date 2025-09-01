@@ -1,33 +1,40 @@
 {
   "name": "remotion-tutorial",
   "version": "1.0.0",
-  "description": "My Remotion video",
+  "description": "A comprehensive Remotion tutorial project with React, TypeScript, and TailwindCSS",
   "repository": {},
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
     "@remotion/cli": "4.0.340",
+    "@remotion/tailwind-v4": "4.0.340",
     "@remotion/zod-types": "4.0.340",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "remotion": "4.0.340",
-    "zod": "3.22.3",
-    "@remotion/tailwind-v4": "4.0.340",
-    "tailwindcss": "4.0.0"
+    "zod": "3.22.3"
   },
   "devDependencies": {
     "@remotion/eslint-config-flat": "4.0.340",
     "@types/react": "19.0.0",
     "@types/web": "0.0.166",
+    "autoprefixer": "^10.4.21",
     "eslint": "9.19.0",
+    "postcss": "^8.5.6",
     "prettier": "3.6.0",
+    "tailwindcss": "^4.1.12",
     "typescript": "5.8.2"
   },
   "scripts": {
     "dev": "remotion studio",
     "build": "remotion bundle",
     "upgrade": "remotion upgrade",
-    "lint": "eslint src && tsc"
+    "lint": "eslint src && tsc",
+    "render:hello": "remotion render src/index.ts HelloWorld out/hello-world.mp4",
+    "render:text": "remotion render src/index.ts TextAnimations out/text-animations.mp4",
+    "render:layout": "remotion render src/index.ts LayoutShowcase out/layout-showcase.mp4",
+    "render:animation": "remotion render src/index.ts AnimationShowcase out/animation-showcase.mp4",
+    "render:all": "npm run render:hello && npm run render:text && npm run render:layout && npm run render:animation"
   },
   "sideEffects": [
     "*.css"

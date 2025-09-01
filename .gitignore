@@ -1,7 +1,53 @@
-node_modules
-dist
-.DS_Store
-.env
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-# Ignore the output video from Git but not videos you import into src/.
-out
+# Production builds
+dist/
+build/
+
+# Rendered videos
+out/*.mp4
+out/*.mov
+out/*.webm
+out/*.gif
+!out/README.md
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# TypeScript
+*.tsbuildinfo
+
+# Remotion
+.remotion/
+
+# Logs
+logs
+*.log
+
+# Cache
+.cache/
+.parcel-cache/

@@ -55,6 +55,10 @@ export const HelloWorld: React.FC<z.infer<typeof myCompSchema>> = ({
     },
   );
 
+  console.log("logoTranslation: ", logoTranslation);
+  console.log("opacity: ", opacity);
+  console.log("--------------------------------");
+
   // A <AbsoluteFill> is just a absolutely positioned <div>!
   return (
     <AbsoluteFill style={{ backgroundColor: "white" }}>

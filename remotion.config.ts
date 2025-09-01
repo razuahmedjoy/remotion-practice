@@ -6,6 +6,14 @@
 import { Config } from "@remotion/cli/config";
 import { enableTailwind } from '@remotion/tailwind-v4';
 
+// Video quality settings
 Config.setVideoImageFormat("jpeg");
 Config.setOverwriteOutput(true);
+
+// Studio and rendering optimizations
+Config.setStudioPort(3000);
+Config.setConcurrency(1); // Adjust based on your machine capabilities
+Config.setChromiumOpenGlRenderer("egl"); // Better performance on Linux/Windows
+
+// TailwindCSS integration
 Config.overrideWebpackConfig(enableTailwind);
