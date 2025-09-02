@@ -15,19 +15,14 @@ const paragraphContainer: React.CSSProperties = {
     position: "absolute",
     left: "50%",
     top: "50%",
-    width: "65%",
+    width: "70%",
     height: "100%",
 
 }
 
-const paragraphText: React.CSSProperties = {
+const paragraphText = {
     color: "black",
-    fontSize: 32,
-    fontWeight: "normal",
-    lineHeight: 1.2,
-    textRendering: "optimizeLegibility",
-    WebkitFontSmoothing: "antialiased",
-
+    fontSize: 30,
 }
 
 export const TextHighlightAnimation: React.FC<TextHighlightAnimationProps> = ({
@@ -37,12 +32,11 @@ export const TextHighlightAnimation: React.FC<TextHighlightAnimationProps> = ({
 }: TextHighlightAnimationProps) => {
 
     const frame = useCurrentFrame();
-    const { fps, durationInFrames } = useVideoConfig();
+    const { fps } = useVideoConfig();
 
     const progress = spring({
         frame: frame,
         fps,
-        durationInFrames: durationInFrames-150,
         config: {
             damping: 500,
             stiffness: 20,
@@ -50,7 +44,7 @@ export const TextHighlightAnimation: React.FC<TextHighlightAnimationProps> = ({
            
         },
     });
-    const scale = interpolate(progress, [0, 1], [1, 1.25], {
+    const scale = interpolate(progress, [0, 1], [1, 1.3], {
         easing: Easing.ease,
         extrapolateLeft: "clamp",
         extrapolateRight: "clamp",
@@ -63,7 +57,7 @@ export const TextHighlightAnimation: React.FC<TextHighlightAnimationProps> = ({
         const tokens = (highlightsText || [])
             .map((t) => t?.trim())
             .filter((t): t is string => Boolean(t) && t.length > 0);
-        
+
         const perHighlightFrames = Math.max(1, Math.round(fps * 0.8));
         const gapFrames = Math.max(1, Math.round(fps * 0.2));
         const startDelay = Math.round(fps * 0.4);
@@ -168,15 +162,6 @@ export const TextHighlightAnimation: React.FC<TextHighlightAnimationProps> = ({
 
 
             </AbsoluteFill>
-
-            <AbsoluteFill
-                style={{
-                    pointerEvents: "none",
-                    opacity: "0.55",
-                    background:
-                        "radial-gradient(ellipse at center, rgba(0,0,0,0) 40%, rgba(0,0,0,0.85) 100%)",
-                }}
-            />
 
 
         </AbsoluteFill>

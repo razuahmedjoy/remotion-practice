@@ -87,7 +87,7 @@ export const ArrowAnimation: React.FC<ArrowAnimationProps> = ({ backgroundImage,
     });
 
     const opacityProgress = spring({
-        frame: frame-20,
+        frame: frame-30,
         fps: 60,
         config: {
             damping: 50,
@@ -134,7 +134,7 @@ export const ArrowAnimation: React.FC<ArrowAnimationProps> = ({ backgroundImage,
                     }}
                 />
             </Sequence>
-            <Sequence from={40} durationInFrames={durationInFrames}>
+            <Sequence from={40} durationInFrames={durationInFrames} className="z-10">
                 <AbsoluteFill style={{ position: "relative", zIndex: 100, display: "flex", alignItems: "center", justifyContent: "center", transform: 'translateX(500px)', scale: scale, opacity: opacityValue }}>
                     <SlideIn from="bottom">
                         <PolaroidCard imageUrl={rightImage} rotationDeg={3} />

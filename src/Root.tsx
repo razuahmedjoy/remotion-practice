@@ -21,7 +21,14 @@ import {
   arrowAnimationSchema,
 } from "./compositions/ArrowAnimation";
 import { ImageAndText, imageAndTextSchema } from "./compositions/ImageAndText";
-import { TextHighlightAnimation, textHighlightAnimationSchema } from "./compositions/TextHighlightAnimation/TextHighlightAnimation";
+import {
+  TextHighlightAnimation,
+  textHighlightAnimationSchema,
+} from "./compositions/TextHighlightAnimation/TextHighlightAnimation";
+import {
+  TextListAnimation,
+  textListAnimationSchema,
+} from "./compositions/TextListAnimation/TextListAnimation";
 
 // Each <Composition> is an entry in the sidebar!
 
@@ -136,7 +143,6 @@ export const RemotionRoot: React.FC = () => {
           theme: "theme1",
         }}
       />
-
       <Composition
         id="TextHighlightAnimation"
         component={TextHighlightAnimation}
@@ -152,8 +158,33 @@ export const RemotionRoot: React.FC = () => {
             "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
             "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
           ],
-          highlightsText: ["Lorem ipsum", "quis nostrud exercitation ullamco", "reprehenderit in voluptate", "laborum"],
+          highlightsText: [
+            "Lorem ipsum",
+            "quis nostrud exercitation ullamco",
+            "reprehenderit in voluptate",
+            "laborum",
+          ],
           theme: "theme1",
+        }}
+      />
+      <Composition
+        id="TextListAnimation"
+        component={TextListAnimation}
+        durationInFrames={300}
+        fps={30}
+        width={1920}
+        height={1080}
+        schema={textListAnimationSchema}
+        defaultProps={{
+          title: "TOP TECH TRENDS 2024",
+          listItems: [
+            "ARTIFICIAL INTELLIGENCE",
+            "QUANTUM COMPUTING",
+            "SUSTAINABLE TECHNOLOGY",
+            "CYBERSECURITY",
+            "METAVERSE",
+          ],
+          theme: "dark" as const,
         }}
       />
     </>
