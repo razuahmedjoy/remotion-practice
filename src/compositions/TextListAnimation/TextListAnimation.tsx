@@ -7,8 +7,12 @@ import { ListItems } from "./components/ListItems";
 import { SlideIn } from "../../components";
 
 export const textListAnimationSchema = z.object({
-    title: z.string().max(20, "Title must be less than 20 characters").min(1, "Title must be at least 1 character"),
-    listItems: z.array(z.string().max(30, "List item must be less than 20 characters")).min(1).max(10, "Maximum 10 list items allowed"),
+    title: z.string()
+        .max(20, "Title must be less than 20 characters")
+        .min(1, "Title must be at least 1 character"),
+    listItems: z.array(z.string().max(30, "List item must be less than 20 characters"))
+        .min(1)
+        .max(5, "Maximum 5 list items allowed"),
     theme: z.enum(["dark", "light", "blue"]).default("dark"),
 });
 
@@ -68,11 +72,11 @@ const overlayStyle: React.CSSProperties = {
     right: 0,
     bottom: 0,
     background:
-      "radial-gradient(ellipse at center, rgba(0,0,0,0) 65%, rgba(0,0,0,0.4) 100%)",
+        "radial-gradient(ellipse at center, rgba(0,0,0,0) 65%, rgba(0,0,0,0.4) 100%)",
     pointerEvents: "none",
     zIndex: 10,
-  };
-  
+};
+
 export const TextListAnimation: React.FC<TextListAnimationProps> = ({
     title,
     listItems,

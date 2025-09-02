@@ -32,7 +32,7 @@ export const themes: Record<string, TextListTheme> = {
         highlightColor: "#ff4444",
         titleFontSize: "5rem",
         listItemFontSize: "3rem",
-        fontFamily: "Montserrat",
+        fontFamily: "monospace",
         spacing: {
             titleBottom: "2rem",
             underlineBottom: "3rem",
@@ -43,8 +43,9 @@ export const themes: Record<string, TextListTheme> = {
         backgroundColor: "#0f1419",
         textColor: "#ffffff",
         highlightColor: "#00bfff",
-        titleFontSize: "4rem",
+        titleFontSize: "5rem",
         listItemFontSize: "3rem",
+        fontFamily: "Times New Roman, Times, serif",
         spacing: {
             titleBottom: "2rem",
             underlineBottom: "3rem",
